@@ -1,0 +1,38 @@
+Derek Pedersen
+
+Experienced Full Stack Developer
+
+206-459-7882	derek-pedersen@derekpedersen.com	www.derekpedersen.com
+
+Full stack developer experienced in maintaining, building, and designing critical business applications and infrastructure. I've worked in a variety of environments from startup to Fortune 50 and in a range of roles from Software Developer to Solutions Architect. 
+
+With experience working in:
+	C#							Entity Framework	REST			EDI			VSTS		Azure Key Vault
+	ASP.Net Web Api				dapper				SOAP			cXML		Jira		Azure Storage
+	Angular (1.0, 1.5, 2.0+)	SQL / SQL Server	WCF				Selenium	Bamboo		Azure Functions
+	Typescript					git					Single Sign On	nUnit		GoCD		SCSS
+	npm							SVN					OAuth2			MSTest		PowerShell	Material Design
+	NuGet						TFVC				SAML			jQuery		VB			Flexbox
+
+Work Experience
+	iTrellis
+	Software Engineer	|	MAY 2016 - Present
+	* Currently helping clients maintain their application portfolios through development and maintenance of new and existing applications. While also evaluating their current development practices in an effort to help them achieve a quicker rate of delivery of new features by minimizing the introduction of bugs. 
+	
+	Lowe's Home Improvement
+	Software Engineer	|	OCT 2015 - MAY 2016
+	* My last assignment was to design, draft, and implement a standardization of development tools, practices, and workflows within the department (Kirkland, WA). I used a continuous delivery approach that employed the Atlassian tool suite (Jira, BitBucket, Confluence, Bamboo) to control work item tracking and builds of .NET applications (C#, SQL Server, Web Api, Nuget) that spanned from console applications for accounting to full eCommerce websites. 
+	
+	ATG Stores
+	Software Team Lead	|	FEB 2012 - OCT 2015
+	* My team was responsible for building and maintaining business applications that ranged from back office OMS web form applications for printing return shipping labels to more complex B2B systems integrations such as with Ariba and other cXML based purchasing solutions.
+
+Education
+	Western Washington University
+	B.A Economics, Philosophy (double major)	|	SEP 2005 - DEC 2009
+	* My education in philosophy consisted of a rigorous study of logical thinking, critical analysis, and proper argumentation mainly expressed through written essays.
+	* My education in economics consisted of a study of rational behavior and potential outcomes in such  areas as macroeconomics, international trade, public finance, industrial organization, and the labor market through the use of critical analysis tools.
+	
+	Seattle Central University
+	Database Design & Administration (certficate)	|	SEP 2010 - DEC 2011
+	* Study focused on all aspects of relational databases from their design and proper modeling to documenting database structures and rules, maintaining and retrieving data, performing security administration functions to ensure the protection of data integrity, and the use of databases in creating programs and dynamic websites.

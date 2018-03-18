@@ -1,0 +1,47 @@
+
+# Created by https://www.gitignore.io/api/angular,visualstudiocode
+
+## Angular ##
+# compiled output
+dist/*
+src/dist
+src/tmp
+src/app/**/*.js
+src/app/**/*.js.map
+
+# dependencies
+src/node_modules
+src/bower_components
+
+# IDEs and editors
+src/.idea
+
+# misc
+src/.sass-cache
+src/connect.lock
+src/coverage/*
+src/libpeerconnection.log
+src/npm-debug.log
+src/testem.log
+src/typings
+
+# e2e
+src/e2e/*.js
+src/e2e/*.map
+
+# System Files
+.DS_Store
+
+# nodejs
+node_modules/*
+src/node_modules/*
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+# End of https://www.gitignore.io/api/angular,visualstudiocode

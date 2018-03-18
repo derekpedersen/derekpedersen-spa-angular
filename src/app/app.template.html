@@ -1,0 +1,30 @@
+﻿
+    <div fxLayout="row">
+    <!--navigation-->
+    <mat-toolbar color="primary">
+
+        <button mat-button routerLink="/">
+            <mat-icon>home</mat-icon>
+        </button>
+
+        <!-- This fills the remaining space of the current row -->
+        <span class="fill-remaining-space"></span>
+        <div fxLayout="row" fxShow="false" fxShow.gt-md>
+            <button mat-button routerLink="/resume" class="mat-display-1">Resume</button>
+            <button mat-button routerLink="/programming">Programming</button>
+            <button mat-button routerLink="/hobbies">Hobbies</button>
+        </div>
+        <button mat-button [mat-menu-trigger-for]="menuToolbar" fxHide="false" fxHide.gt-md>
+            <mat-icon>menu</mat-icon>
+        </button>
+
+    </mat-toolbar>
+    <mat-menu x-position="before" #menuToolbar="matMenu">
+        <button mat-menu-item routerLink="/resume">Resume</button>
+        <button mat-menu-item routerLink="/programming">Programming</button>
+        <button mat-menu-item routerLink="/hobbies">Hobbies</button>
+    </mat-menu>
+    </div>
+
+    <!--router view-->
+    <router-outlet fxFlexFill></router-outlet>

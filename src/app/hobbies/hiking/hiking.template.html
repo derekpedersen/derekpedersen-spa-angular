@@ -1,0 +1,57 @@
+﻿<div *ngIf="isLoading">
+    <mat-spinner class="content-loading-spinner"></mat-spinner>
+</div>
+<div *ngIf="!isLoading"
+     fxLayout="row" fxLayout.xs="column">
+    <div fxLayout="column"
+         fxFlex="25">
+        <mat-card class="base-card">
+            <mat-card-content>
+                <mat-card-title>
+                    <span>Hiking Routes</span>
+                </mat-card-title>
+                <mat-accordion>
+                    <mat-expansion-panel *ngFor="let state of hikingRouteStates">
+                        <mat-expansion-panel-header>
+                            {{ state.state }}
+                        </mat-expansion-panel-header>
+                        <mat-list>
+                            <mat-list-item *ngFor="let city of state.cities">
+                                <button mat-menu-item *ngIf="city.hikeRoutes.length > 1" [matMenuTriggerFor]="hikingRouteMenu">{{ city.city }}</button>
+                                <button mat-menu-item *ngIf="city.hikeRoutes.length === 1" (click)="selectHikingRoute(city.hikingRoutes[0])">{{ city.city }}</button>
+                                <mat-menu #skateparkMenu="matMenu" [overlapTrigger]="true">
+                                    <mat-list>
+                                        <mat-list-item *ngFor="let hike of city.hikingRoutes">
+                                            <button mat-menu-item (click)="selectHikingRoute(hike)">{{ hike.name }}</button>
+                                        </mat-list-item>
+                                    </mat-list>
+                                </mat-menu>
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxLayout="column"
+         fxFlex="75">
+        <div *ngIf="!isSelected">
+            <mat-card class="base-card">
+                <mat-card-title>
+                    Hiking
+                </mat-card-title>
+                <mat-card-content>
+                    <p>
+                        Growing up in the Pacific Northwest I've been hiking as long as I can walk.
+                    </p>
+                    <p>
+                        I've started documenting all of the hikes I've been going on. They are organized by state / province and then by city.
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div *ngIf="isSelected">
+            <photo-album [model]="selectedHikeRoute"></photo-album>
+        </div>
+    </div>
+</div>
