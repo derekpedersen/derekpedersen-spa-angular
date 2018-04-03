@@ -10,10 +10,12 @@ import { SharedService } from '../shared/shared.service';
 export class HomePageComponent {
     public title: string;
     public subtitle: string;
+    public isLoading: boolean;
 
     constructor(private sharedService: SharedService) {
         this.title = this.sharedService.mdCardTitle;
         this.subtitle = this.sharedService.mdCardSubtitle;
+        this.isLoading = false;
     }
 
     ngOnInit() {

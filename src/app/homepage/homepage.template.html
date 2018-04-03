@@ -1,9 +1,14 @@
-﻿<mat-card class="base-card">
-    <mat-card-title><h1 class="mat-h1">{{ title }}</h1></mat-card-title>
-    <mat-card-subtitle><h1 class="mat-h2">{{ subtitle }}</h1></mat-card-subtitle>
-    <mat-card-content>
-        <img style="height: 60%; margin: auto; display: block;" src="../../theme/images/headshot-victoria-bc.jpg" class="content-image" />
-    </mat-card-content>
-    <mat-card-actions>
-    </mat-card-actions>
-</mat-card>
+﻿<div *ngIf="isLoading">
+    <mat-spinner class="content-loading-spinner"></mat-spinner>
+</div>
+<div *ngIf="!isLoading">
+    <mat-card class="base-card">
+        <mat-card-title>{{ title }}</mat-card-title>
+        <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
+        <mat-card-content>
+            <div>
+                <img style="height: 50%; margin: auto; display: block;" src="../../theme/images/headshot-victoria-bc.jpg" class="content-image" />
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

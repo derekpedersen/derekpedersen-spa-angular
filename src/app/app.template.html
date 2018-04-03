@@ -9,12 +9,12 @@
 
         <!-- This fills the remaining space of the current row -->
         <span class="fill-remaining-space"></span>
-        <div fxLayout="row" fxShow="false" fxShow.gt-md>
+        <div fxLayout="row" fxShow="false" fxShow.sm>
             <button mat-button routerLink="/resume" class="mat-display-1">Resume</button>
             <button mat-button routerLink="/programming">Programming</button>
             <button mat-button routerLink="/hobbies">Hobbies</button>
         </div>
-        <button mat-button [mat-menu-trigger-for]="menuToolbar" fxHide="false" fxHide.gt-md>
+        <button mat-button [mat-menu-trigger-for]="menuToolbar" fxHide="false" fxHide.sm>
             <mat-icon>menu</mat-icon>
         </button>
 
