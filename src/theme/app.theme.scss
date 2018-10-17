@@ -63,3 +63,9 @@ derekpedersen:empty + .loading h1 {
     text-align: left;
     left: 0 !important;
 }
+
+// custom css
+.fill-remaining-space {
+    // This fills the remaining space, by using flexbox
+    flex: 1 1 auto;
+}

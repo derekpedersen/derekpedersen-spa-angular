@@ -6,7 +6,8 @@
         <mat-card-title>{{ resume.title }}</mat-card-title>
         <mat-card-subtitle>{{ resume.subtitle }}</mat-card-subtitle>
         <mat-card-content>
-            <img style="height: 50%; margin: auto; display: block;" src="../../theme/images/headshot-victoria-bc.jpg" class="content-image" />
+            <img style="height: 50%;" src="../../theme/images/headshot-victoria-bc.jpg" />
+            <br />
             <mat-grid-list cols="5" rowHeight="20px">
                 <mat-grid-tile *ngFor="let skill of resume.skillset" class="tile-skillset">
                     {{ skill }}
@@ -17,8 +18,5 @@
                 {{ resume.content }}
             </div>
         </mat-card-content>
-        <mat-card-actions>
-            <internet-icon-ribbon></internet-icon-ribbon>
-        </mat-card-actions>
     </mat-card>
 </div>
