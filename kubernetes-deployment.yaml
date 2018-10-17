@@ -1,17 +1,17 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: celebrityskateboards-spa-angular-deployment
+  name: derekpedersen-spa-angular-deployment
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: celebrityskateboards-spa-angular-deployment
+        app: derekpedersen-spa-angular-deployment
     spec:
       containers:
-      - name: celebrityskateboards-spa-angular
-        image: us.gcr.io/%GCLOUD_PROJECT_ID%/celebrityskateboards-spa-angular:%GIT_COMMIT_SHA%
+      - name: derekpedersen-spa-angular
+        image: us.gcr.io/%GCLOUD_PROJECT_ID%/derekpedersen-spa-angular:%GIT_COMMIT_SHA%
         ports:
         - containerPort: 80
       

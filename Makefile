@@ -9,11 +9,11 @@ build:
 	ng build --prod --build-optimizer
 
 docker: build
-	docker build ./ -t celebrityskateboards-spa-angular
+	docker build ./ -t derekpedersen-spa-angular
 
 publish: docker
-	docker tag celebrityskateboards-spa-angular us.gcr.io/${GCLOUD_PROJECT_ID}/celebrityskateboards-spa-angular:${GIT_COMMIT_SHA}
-	gcloud docker -- push us.gcr.io/${GCLOUD_PROJECT_ID}/celebrityskateboards-spa-angular:${GIT_COMMIT_SHA}
+	docker tag derekpedersen-spa-angular us.gcr.io/${GCLOUD_PROJECT_ID}/derekpedersen-spa-angular:${GIT_COMMIT_SHA}
+	gcloud docker -- push us.gcr.io/${GCLOUD_PROJECT_ID}/derekpedersen-spa-angular:${GIT_COMMIT_SHA}
 
 deploy: publish
 	sed -e 's/%GCLOUD_PROJECT_ID%/${GCLOUD_PROJECT_ID}/g' -e 's/%GIT_COMMIT_SHA%/${GIT_COMMIT_SHA}/g' ./kubernetes-deployment.yaml > deployment.sed.yaml

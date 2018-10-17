@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('celebrityskateboards-spa-angular App', () => {
+describe('derekpedersen-spa-angular App', () => {
   let page: AppPage;
 
   beforeEach(() => {

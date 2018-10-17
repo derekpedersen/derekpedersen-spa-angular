@@ -5,6 +5,6 @@ services:
     ports:
       - "8080:8080"
   spa:
-    image: celebrityskateboards-spa-angular
+    image: derekpedersen-spa-angular
     ports:
       - "80:80"

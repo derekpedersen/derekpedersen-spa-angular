@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: celebrityskateboards-spa-angular-deployment
-  name: celebrityskateboards-spa-angular-service
+    app: derekpedersen-spa-angular-deployment
+  name: derekpedersen-spa-angular-service
   namespace: default
 spec:
   ports:
@@ -12,5 +12,5 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: celebrityskateboards-spa-angular-deployment
+    app: derekpedersen-spa-angular-deployment
   type: ClusterIP
