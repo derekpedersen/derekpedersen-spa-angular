@@ -1,10 +1,10 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'derekpedersen',
-    templateUrl: `./app.template.html`
+  selector: 'celebrityskateboards',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
-    title = 'derekpedersen.com';
+  title = 'app';
 }
