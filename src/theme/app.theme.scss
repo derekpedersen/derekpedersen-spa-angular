@@ -42,6 +42,10 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
     padding-top: 10% !important;
 }
 
+.mat-card {
+    overflow-y: auto !important;
+}
+
 // Loading 
 derekpedersen:empty + .loading {
     opacity: 1;
