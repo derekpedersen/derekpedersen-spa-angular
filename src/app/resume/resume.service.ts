@@ -3,7 +3,7 @@ import { Observable, Operator } from 'rxjs';
 
 import { Resume } from './resume.model';
 
-import { ApiService } from '../shared/api/api.service';
+import { ApiService } from '../api/api.service';
 
 @Injectable()
 export class ResumeService {

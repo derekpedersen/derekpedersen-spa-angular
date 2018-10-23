@@ -2,7 +2,6 @@
 
 import { Resume } from './resume.model';
 
-import { SharedService } from '../shared/shared.service';
 import { ResumeService } from './resume.service';
 
 @Component({
@@ -18,11 +17,8 @@ export class ResumeComponent {
     public isLoading: boolean;
 
     constructor(
-        private sharedService: SharedService,
         private service: ResumeService) {
 
-        this.title = this.sharedService.mdCardTitle;
-        this.subtitle = this.sharedService.mdCardSubtitle;
         this.resume = new Resume();
     }
 

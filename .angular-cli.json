@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "spa"
+    "name": "celebrity-skateboards"
   },
   "apps": [
     {
@@ -21,7 +21,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "theme/app-theme.css"
+        "styles.css",
+        "theme/app.theme.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

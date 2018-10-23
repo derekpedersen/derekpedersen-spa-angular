@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: derekpedersen-spa-angular-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: derekpedersen-spa-angular-deployment
+    spec:
+      containers:
+      - name: derekpedersen-spa-angular
+        image: us.gcr.io/%GCLOUD_PROJECT_ID%/derekpedersen-spa-angular:%GIT_COMMIT_SHA%
+        ports:
+        - containerPort: 80
+      

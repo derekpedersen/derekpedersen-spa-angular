@@ -1,23 +1,17 @@
-﻿<div *ngIf="isLoading">
-    <mat-spinner class="content-loading-spinner"></mat-spinner>
-</div>
-<div *ngIf="!isLoading">
-    <mat-card class="base-card">
-        <mat-card-title>{{ resume.title }}</mat-card-title>
-        <mat-card-subtitle>{{ resume.subtitle }}</mat-card-subtitle>
-        <mat-card-actions>
-            <internet-icon-ribbon></internet-icon-ribbon>
-        </mat-card-actions>
-        <mat-card-content>
-            <mat-grid-list cols="5" rowHeight="20px">
-                <mat-grid-tile *ngFor="let skill of resume.skillset" class="tile-skillset">
-                    {{ skill }}
-                </mat-grid-tile>
-            </mat-grid-list>
-            <br />
-            <div>
-                {{ resume.content }}
-            </div>
-        </mat-card-content>
-    </mat-card>
-</div>
+﻿<mat-card fxFlexFill fxLayout="column">
+    <mat-card-title>{{ resume.title }}</mat-card-title>
+    <mat-card-subtitle>{{ resume.subtitle }}</mat-card-subtitle>
+    <mat-card-subtitle>
+        <img style="width: 25%; height: 25%; border:0;" src="../../theme/images/headshot-victoria-bc.jpg" /></mat-card-subtitle>
+    <mat-card-content>
+        <mat-grid-list cols="5" rowHeight="20px">
+            <mat-grid-tile *ngFor="let skill of resume.skillset" class="tile-skillset">
+                {{ skill }}
+            </mat-grid-tile>
+        </mat-grid-list>
+        <br />
+        <div>
+            {{ resume.content }}
+        </div>
+    </mat-card-content>
+</mat-card>
