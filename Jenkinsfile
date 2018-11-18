@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'build-angular-stable'
+        label 'build-angular-latest'
     }
     stages {
         stage('Checkout') {
@@ -14,6 +14,13 @@ pipeline {
             steps{
                 dir('/root/workspace/derekpedersen-spa-angular') {
                     sh 'make build'
+                }
+            }
+        }
+        stage('Test') {
+            steps{
+                dir('/root/workspace/derekpedersen-spa-angular') {
+                    sh 'make test'
                 }
             }
         }

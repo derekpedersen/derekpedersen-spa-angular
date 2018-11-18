@@ -8,7 +8,7 @@ build:
 	ng build --prod --build-optimizer
 
 test:
-	ng test --watch=false --code-coverage
+	ng test --watch=false --code-coverage --browsers ChromeHeadless
 
 docker:
 	docker build ./ -t derekpedersen-spa-angular
