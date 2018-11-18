@@ -1,5 +1,8 @@
 # DerekpedersenSpaAngular
 
+[![Build Status](https://jenkins.derekpedersen.com/buildStatus/icon?job=derekpedersen/derekpedersen-spa-angular/master&style=plastic&.png)](https://jenkins.derekpedersen.com/job/derekpedersen/job/derekpedersen-spa-angular/job/master/)
+[![Coverage Status](https://coveralls.io/repos/github/derekpedersen/derekpedersen-spa-angular/badge.png?branch=master)](https://coveralls.io/github/derekpedersen/derekpedersen-spa-angular)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
 ## Development server
