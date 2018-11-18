@@ -7,6 +7,9 @@ build:
 	npm install
 	ng build --prod --build-optimizer
 
+test:
+	ng test --watch=false --code-coverage
+
 docker:
 	docker build ./ -t derekpedersen-spa-angular
 
