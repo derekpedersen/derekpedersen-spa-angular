@@ -8,7 +8,10 @@ build:
 	ng build --prod --build-optimizer
 
 test:
-	ng test --watch=false --code-coverage --browsers ChromeHeadless
+	ng test --watch=false --browsers ChromeHeadless --code-coverage
+
+coveralls:
+	cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 docker:
 	docker build ./ -t derekpedersen-spa-angular
