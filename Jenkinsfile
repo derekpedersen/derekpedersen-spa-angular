@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'build-angular-stable'
+        label 'build-angular-latest'
     }
     stages {
         stage('Checkout') {
@@ -14,6 +14,13 @@ pipeline {
             steps{
                 dir('/root/workspace/derekpedersen-spa-angular') {
                     sh 'make build'
+                }
+            }
+        }
+        stage('Test') {
+            steps{
+                dir('/root/workspace/derekpedersen-spa-angular') {
+                    sh 'make test'
                 }
             }
         }
@@ -45,6 +52,16 @@ pipeline {
                     dir('/root/workspace/derekpedersen-spa-angular') {
                         sh 'make deploy'
                     }
+                }
+            }
+        }
+    }
+    post {
+        always {
+            withCredentials([[$class: 'StringBinding', credentialsId: 'DEREKPEDERSEN_SPA_COVERALLS_TOKEN', variable: 'COVERALLS_REPO_TOKEN']]) {
+                dir('/root/workspace/derekpedersen-spa-angular') {
+                    step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/cobertura-coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false]) 
+                    sh 'make coveralls'
                 }
             }
         }
