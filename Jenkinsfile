@@ -20,6 +20,7 @@ pipeline {
         stage('Test') {
             steps{
                 dir('/root/workspace/derekpedersen-spa-angular') {
+                    sh 'npm install'
                     sh 'make test'
                 }
             }
