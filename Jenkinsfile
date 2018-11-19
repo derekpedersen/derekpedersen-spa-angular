@@ -25,13 +25,13 @@ pipeline {
                 }
             }
         }
-        stage('Docker') {
-            steps {
-                dir('/root/workspace/derekpedersen-spa-angular') {
-                    sh 'make docker'
-                }
-            }
-        }
+        // stage('Docker') {
+        //     steps {
+        //         dir('/root/workspace/derekpedersen-spa-angular') {
+        //             sh 'make docker'
+        //         }
+        //     }
+        // }
         stage('Publish') {
             when {
                 expression { env.BRANCH_NAME == 'master' }
