@@ -10,28 +10,27 @@ pipeline {
                 }
             }
         }
-        // stage('Build') {
-        //     steps{
-        //         dir('/root/workspace/derekpedersen-spa-angular') {
-        //             sh 'make build'
-        //         }
-        //     }
-        // }
+        stage('Build') {
+            steps{
+                dir('/root/workspace/derekpedersen-spa-angular') {
+                    sh 'make build'
+                }
+            }
+        }
         stage('Test') {
             steps{
                 dir('/root/workspace/derekpedersen-spa-angular') {
-                    sh 'npm install'
                     sh 'make test'
                 }
             }
         }
-        // stage('Docker') {
-        //     steps {
-        //         dir('/root/workspace/derekpedersen-spa-angular') {
-        //             sh 'make docker'
-        //         }
-        //     }
-        // }
+        stage('Docker') {
+            steps {
+                dir('/root/workspace/derekpedersen-spa-angular') {
+                    sh 'make docker'
+                }
+            }
+        }
         stage('Publish') {
             when {
                 expression { env.BRANCH_NAME == 'master' }
@@ -62,8 +61,6 @@ pipeline {
             withCredentials([[$class: 'StringBinding', credentialsId: 'DEREKPEDERSEN_SPA_COVERALLS_TOKEN', variable: 'COVERALLS_REPO_TOKEN']]) {
                 dir('/root/workspace/derekpedersen-spa-angular') {
                     step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/cobertura-coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false]) 
-                    //sh 'go get github.com/derekpedersen/goveralls'
-                    //sh 'goveralls -coverprofile=cp.out'
                     sh 'make coveralls'
                 }
             }
