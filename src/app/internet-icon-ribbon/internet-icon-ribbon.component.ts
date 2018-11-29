@@ -18,8 +18,6 @@ export class InternetIconRibbonComponent {
             sanitizer.bypassSecurityTrustResourceUrl('/theme/icons/linkedin-box.svg'))
             .addSvgIcon('bitbucket',
             sanitizer.bypassSecurityTrustResourceUrl('/theme/icons/bitbucket.svg'))
-            .addSvgIcon('facebook-box',
-            sanitizer.bypassSecurityTrustResourceUrl('/theme/icons/facebook-box.svg'))
             .addSvgIcon('file-pdf-box',
             sanitizer.bypassSecurityTrustResourceUrl('/theme/icons/file-pdf-box.svg'))
             .addSvgIcon('twitter-box',
