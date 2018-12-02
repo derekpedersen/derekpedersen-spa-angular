@@ -1,5 +1,5 @@
 ﻿<div fxLayout="row" fxLayoutAlign="end">
-    <div fxLayout="row" fxHide="false" fxHide.xs fxLayoutAlign="end">
+    <div fxLayout="row" fxHide="false" fxHide.lt-md fxLayoutAlign="end">
         <span class="fill-remaining-space"></span>
         <div fxFlex="10">
             <a href="https://derekpedersen.github.io/" mat-button target="_blank">
@@ -54,7 +54,7 @@
             </a>
         </div>
     </div>
-    <button mat-button [mat-menu-trigger-for]="menu" fxShow="false" fxShow.xs>
+    <button mat-button [mat-menu-trigger-for]="menu" fxShow="false" fxShow.lt-md>
         <mat-icon>menu</mat-icon>
     </button>
 </div>
