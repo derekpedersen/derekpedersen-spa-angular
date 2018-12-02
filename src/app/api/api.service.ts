@@ -6,11 +6,14 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map'
 import { Jsonp } from '@angular/http/src/http';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class ApiService {
 
     private _headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    private _baseUrl = "/api/";
+    private _host = environment.resume_host;
+    private _baseUrl = this._host + "/api/";
 
     public errorMessage: string;
 

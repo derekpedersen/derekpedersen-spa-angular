@@ -2,16 +2,25 @@
     <mat-card-title>{{ resume.title }}</mat-card-title>
     <mat-card-subtitle>{{ resume.subtitle }}</mat-card-subtitle>
     <mat-card-subtitle>
-        <img style="width: 25%; height: 25%; border:0;" src="../../theme/images/headshot-victoria-bc.jpg" /></mat-card-subtitle>
+        <img style="min-width: 450px; min-height:450px; max-width: 25%; max-height: 25%; border:0;" src="../../theme/images/headshot-victoria-bc.jpg" /></mat-card-subtitle>
     <mat-card-content>
-        <mat-grid-list cols="5" rowHeight="20px">
+        <mat-grid-list fxHide="false" fxHide.lt-md cols="5" rowHeight="35px">
+            <mat-grid-tile *ngFor="let skill of resume.skillset" class="tile-skillset">
+                {{ skill }}
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list fxShow="false" fxShow.lt-md cols="2" rowHeight="20px">
             <mat-grid-tile *ngFor="let skill of resume.skillset" class="tile-skillset">
                 {{ skill }}
             </mat-grid-tile>
         </mat-grid-list>
         <br />
         <div>
-            {{ resume.content }}
+            <mat-grid-list cols="1" rowHeight="50px">
+                <mat-grid-tile *ngFor="let ctnt of resume.content" class="tile-skillset">
+                    {{ ctnt }}
+                </mat-grid-tile>
+            </mat-grid-list>
         </div>
     </mat-card-content>
 </mat-card>
