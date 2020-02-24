@@ -4,8 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "run": "ng serve --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
+    "build:ci": "ng build --prod --build-optimizer",
     "test": "ng test",
+    "test:ci": "ng test --watch=false --browsers ChromeHeadless --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",

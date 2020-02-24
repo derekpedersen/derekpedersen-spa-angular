@@ -13,21 +13,23 @@ pipeline {
         stage('Build') {
             steps{
                 dir('/root/workspace/derekpedersen-spa-angular') {
-                    sh 'make build'
+                    sh 'npm run build:ci'
                 }
             }
         }
         stage('Test') {
             steps{
                 dir('/root/workspace/derekpedersen-spa-angular') {
-                    sh 'make test'
+                    sh 'npm run test:ci'
                 }
             }
         }
         stage('Docker') {
             steps {
                 dir('/root/workspace/derekpedersen-spa-angular') {
-                    sh 'make docker'
+                    sh 'npm run docker:build'
+                    sh 'npm run docker:tag'
+                    sh 'npm run docker:publish'
                 }
             }
         }
@@ -61,7 +63,7 @@ pipeline {
             withCredentials([[$class: 'StringBinding', credentialsId: 'DEREKPEDERSEN_SPA_COVERALLS_TOKEN', variable: 'COVERALLS_REPO_TOKEN']]) {
                 dir('/root/workspace/derekpedersen-spa-angular') {
                     step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/cobertura-coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false]) 
-                    sh 'make coveralls'
+                    sh 'npm run coveralls'
                 }
             }
         }
