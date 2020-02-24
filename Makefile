@@ -11,7 +11,7 @@ test:
 	ng test --watch=false --browsers ChromeHeadless --code-coverage
 
 coveralls:
-	cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+	
 
 docker:
 	docker build ./ -t derekpedersen-spa-angular
@@ -25,4 +25,4 @@ deploy:
 	kubectl apply -f ./deployment.sed.yaml
 	kubectl apply -f ./kubernetes-service.yaml
 
-kubernetes: build docker publish deploy
+kubernetes: build docker publish

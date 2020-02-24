@@ -1,5 +1,5 @@
 {
-  "name": "celebrityskateboards-spa-angular",
+  "name": "derekpedersen-spa-angular",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "docker:build": "docker build ./ -t derekpedersen-spa-angular",
+    "docker:tag": "docker tag derekpedersen-spa-angular us.gcr.io/sleipnir/derekpedersen-spa-angular:$(git rev-parse HEAD)",
+    "docker:publish": "gcloud docker -- push us.gcr.io/sleipnir/derekpedersen-spa-angular:$(git rev-parse HEAD)"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +28,7 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.13.1",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.3.3",
     "zone.js": "~0.8.26"
