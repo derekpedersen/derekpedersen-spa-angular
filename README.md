@@ -1,9 +1,9 @@
-# DerekPedersen.com
+# Derek.Pedersen.io
 
-[![Build Status](https://jenkins.derekpedersen.com/buildStatus/icon?job=derekpedersen/derekpedersen-spa-angular/master&style=plastic&.png)](https://jenkins.derekpedersen.com/job/derekpedersen/job/derekpedersen-spa-angular/job/master/)
+[![Build Status](https://jenkins.pedersen.io/buildStatus/icon?job=derekpedersen/derekpedersen-spa-angular/master&style=plastic&.png)](https://jenkins.pedersen.io/job/derekpedersen/job/derekpedersen-spa-angular/job/master/)
 [![Coverage Status](https://coveralls.io/repos/github/derekpedersen/derekpedersen-spa-angular/badge.png?branch=master)](https://coveralls.io/github/derekpedersen/derekpedersen-spa-angular)
 
-[DerekPedersen.com](https://derekpedersen.com) is a Single Page Application (SPA) written in [Angular](https://angular.io).
+[derek.pedersen.io](https://derek.pedersen.io) is a Single Page Application (SPA) written in [Angular](https://angular.io).
 
 ## Angular CLI
 
@@ -39,38 +39,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Makefile
 
-The `Makefile` contains the following targets for building, running, and deploying the application. 
+## Helm
 
-### run 
-
-`make run`: calls ng serve
-
-### build
-
-`make build`: npm install && ng build
-
-### test
-
-`make test`: ng test
-
-### coveralls
-
-`make coveralls`: publishes code coverage results to coveralls.io
-
-### docker
-
-`make docker`: builds a docker image of the spa
-
-### publish
-
-`make publish`: publishes the docker image to the container registry (gcr)
-
-### deploy
-
-`make deploy`: deploys the application to a k8s cluster
-
-### kubernetes
-
-`make kubernetes`: calls `build`, `docker`, `publish`, and `deploy`
+This project is deployed via a helm chart.
