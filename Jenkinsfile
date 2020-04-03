@@ -10,10 +10,16 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
+        stage('Install') {
             steps{
                 dir('/root/workspace/derekpedersen-spa-angular') {
                     sh 'npm install'
+                }
+            }
+        }
+        stage('Build') {
+            steps{
+                dir('/root/workspace/derekpedersen-spa-angular') {
                     sh 'npm run build:ci'
                 }
             }
@@ -28,9 +34,7 @@ pipeline {
         stage('Docker') {
             steps {
                 dir('/root/workspace/derekpedersen-spa-angular') {
-                    sh 'npm run docker:build'
-                    sh 'npm run docker:tag'
-                    sh 'npm run docker:publish'
+                    sh 'npm run docker:build && npm run docker:tag'
                 }
             }
         }
@@ -40,8 +44,8 @@ pipeline {
             }
             steps {
                 withCredentials([[$class: 'StringBinding', credentialsId: 'GCLOUD_PROJECT_ID', variable: 'GCLOUD_PROJECT_ID']]) {
-                    dir('/root/workspace/derekpedersen-spa-angular') {
-                        sh 'make publish'
+                    dir('/root/workspace/derekpedersen-spa-angular') {   
+                        sh 'npm run docker:publish'
                     }
                 }
             }
@@ -53,7 +57,7 @@ pipeline {
     //         steps {
     //             withCredentials([[$class: 'StringBinding', credentialsId: 'GCLOUD_PROJECT_ID', variable: 'GCLOUD_PROJECT_ID']]) {
     //                 dir('/root/workspace/derekpedersen-spa-angular') {
-    //                     sh 'make deploy'
+    //                     sh 'npm run deploy'
     //                 }
     //             }
     //         }
