@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
             steps{
                 dir('/root/workspace/derekpedersen-spa-angular') {
+                    sh 'npm install'
                     sh 'npm run build:ci'
                 }
             }
