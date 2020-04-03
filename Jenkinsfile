@@ -34,7 +34,7 @@ pipeline {
         stage('Docker') {
             steps {
                 dir('/root/workspace/derekpedersen-spa-angular') {
-                    sh 'npm run docker:build && npm run docker:tag'
+                    sh 'npm run docker:build'
                 }
             }
         }
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 withCredentials([[$class: 'StringBinding', credentialsId: 'GCLOUD_PROJECT_ID', variable: 'GCLOUD_PROJECT_ID']]) {
                     dir('/root/workspace/derekpedersen-spa-angular') {   
-                        sh 'npm run docker:publish'
+                        sh 'npm run docker:tag && npm run docker:publish'
                     }
                 }
             }
