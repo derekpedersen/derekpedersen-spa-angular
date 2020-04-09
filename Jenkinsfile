@@ -62,7 +62,7 @@ pipeline {
     //             }
     //         }
     //     }
-    // }
+    }
     // post {
     //     always {
     //         withCredentials([[$class: 'StringBinding', credentialsId: 'DEREKPEDERSEN_SPA_COVERALLS_TOKEN', variable: 'COVERALLS_REPO_TOKEN']]) {
@@ -72,5 +72,5 @@ pipeline {
     //             }
     //         }
     //     }
-    }
+    //}
 }
