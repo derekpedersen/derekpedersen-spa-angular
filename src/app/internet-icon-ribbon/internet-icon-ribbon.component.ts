@@ -33,7 +33,9 @@ export class InternetIconRibbonComponent {
             .addSvgIcon('stackoverflow',
             sanitizer.bypassSecurityTrustResourceUrl('/theme/icons/stackoverflow.svg'))
             .addSvgIcon('hackerrank',
-            sanitizer.bypassSecurityTrustResourceUrl('/theme/icons/hackerrank.svg'));
+            sanitizer.bypassSecurityTrustResourceUrl('/theme/icons/hackerrank.svg'))
+            .addSvgIcon('docker',
+            sanitizer.bypassSecurityTrustResourceUrl('/theme/icons/docker.svg'));
     }
 
     ngOnInit() {
