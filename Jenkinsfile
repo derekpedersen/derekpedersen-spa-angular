@@ -50,18 +50,18 @@ pipeline {
                 }
             }
         }
-    //     stage('Deploy') {
-    //         when {
-    //             expression { env.BRANCH_NAME == 'master' }
-    //         }
-    //         steps {
-    //             withCredentials([[$class: 'StringBinding', credentialsId: 'GCLOUD_PROJECT_ID', variable: 'GCLOUD_PROJECT_ID']]) {
-    //                 dir('/root/workspace/derekpedersen-spa-angular') {
-    //                     sh 'npm run deploy'
-    //                 }
-    //             }
-    //         }
-    //     }
+        stage('Deploy') {
+            when {
+                expression { env.BRANCH_NAME == 'master' }
+            }
+            steps {
+                withCredentials([[$class: 'StringBinding', credentialsId: 'GCLOUD_PROJECT_ID', variable: 'GCLOUD_PROJECT_ID']]) {
+                    dir('/root/workspace/derekpedersen-spa-angular') {
+                        sh 'npm run deploy'
+                    }
+                }
+            }
+        }
     }
     // post {
     //     always {
