@@ -14,7 +14,8 @@
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "docker:build": "docker build ./ -t derekpedersen-spa-angular",
     "docker:tag": "docker tag derekpedersen-spa-angular us.gcr.io/${GCLOUD_PROJECT_ID}/derekpedersen-spa-angular:$(git rev-parse HEAD)",
-    "docker:publish": "gcloud docker -- push us.gcr.io/${GCLOUD_PROJECT_ID}/derekpedersen-spa-angular:$(git rev-parse HEAD)"
+    "docker:publish": "gcloud docker -- push us.gcr.io/${GCLOUD_PROJECT_ID}/derekpedersen-spa-angular:$(git rev-parse HEAD)",
+    "deploy": "helm install dp-spa-angular .helm"
   },
   "private": true,
   "dependencies": {
