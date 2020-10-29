@@ -39,7 +39,9 @@ pipeline {
             }
         }
         stage('Publish') {
-           
+            when {
+                expression { env.BRANCH_NAME == 'master' }
+            }
             steps {
                 withCredentials([[$class: 'StringBinding', credentialsId: 'GCLOUD_PROJECT_ID', variable: 'GCLOUD_PROJECT_ID']]) {
                     dir('/root/workspace/derekpedersen-spa-angular') {   
@@ -49,7 +51,9 @@ pipeline {
             }
         }
         stage('Deploy') {
-           
+            when {
+                expression { env.BRANCH_NAME == 'master' }
+            }
             steps {
                 withCredentials([[$class: 'StringBinding', credentialsId: 'GCLOUD_PROJECT_ID', variable: 'GCLOUD_PROJECT_ID']]) {
                     dir('/root/workspace/derekpedersen-spa-angular') {
@@ -59,7 +63,10 @@ pipeline {
             }
         }
     }
-    // post {
+    //   post {
+    //         when {
+    //             expression { env.BRANCH_NAME == 'master' }
+    //         }
     //     always {
     //         withCredentials([[$class: 'StringBinding', credentialsId: 'DEREKPEDERSEN_SPA_COVERALLS_TOKEN', variable: 'COVERALLS_REPO_TOKEN']]) {
     //             dir('/root/workspace/derekpedersen-spa-angular') {
